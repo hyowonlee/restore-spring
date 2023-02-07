@@ -1,0 +1,16 @@
+spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/views/
+
+  ## MySQL
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+    username: blog
+    password: blog
+
+  ## mybatis
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/**/**.xml
