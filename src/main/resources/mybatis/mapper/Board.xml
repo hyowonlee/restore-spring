@@ -2,8 +2,25 @@
 <!-- mapper DTD 선언 -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.restore.restorespring.dao.BoardDao">
-    <select id="listBoard" resultType="com.restore.restorespring.vo.BoardVo">
-            SELECT * FROM board
+<mapper namespace="com.restore.restorespring.mapper.BoardMapper">
+    <!-- resultMap은 테이블과 객체를 연결 -->
+    <resultMap id="boardResultMap" type="com.restore.restorespring.vo.BoardVo">
+        <result column="ID"         property="id"/>     <!-- <result column="DB테이블명" property="객체변수명"/> -->
+        <result column="TITLE"         property="title"/>
+<!--        <result column="CONTENT"         property="content"/>-->
+        <result column="COUNT"         property="count"/>
+        <result column="USER_ID"         property="userId"/>
+        <result column="CREATE_DATE"         property="createDate"/>
+        <result column="UPDATE_DATE"         property="updateDate"/>
+    </resultMap>
+
+    <select id="listBoard" resultMap="boardResultMap">
+        SELECT *
+        FROM board
     </select>
+
+<!--    <select id="listBoard" resultType="com.restore.restorespring.vo.BoardVo">-->
+<!--            SELECT *-->
+<!--            FROM board-->
+<!--    </select>-->
 </mapper>

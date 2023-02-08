@@ -1,12 +1,11 @@
-package com.restore.restorespring.dao;
+package com.restore.restorespring.mapper;
 
 import com.restore.restorespring.vo.BoardVo;
-import lombok.Data;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
-public interface BoardDao {
+public interface BoardMapper {
     public List<BoardVo> listBoard();
 }
